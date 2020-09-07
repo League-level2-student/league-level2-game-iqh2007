@@ -34,8 +34,6 @@ import javax.swing.JFrame;
  * 
  */
 
-
-
 public class Tetris {
 
 	JFrame frame;
@@ -49,20 +47,22 @@ public class Tetris {
 		gamepanel = new GamePanel();
 
 	}
-	
-public static void main(String[] args) {
-		
+
+	public static void main(String[] args) {
+
 		Tetris tetris = new Tetris();
 		tetris.setup();
-		
-		}
-	
-void setup() {
-	
-	
-}
-	
-	
-	
+
+	}
+
+	void setup() {
+
+		frame.add(gamepanel);
+		frame.setSize(WIDTH, HEIGHT);
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.addKeyListener(gamepanel);
+
+	}
 
 }
