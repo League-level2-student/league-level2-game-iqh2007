@@ -48,11 +48,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Tetris.WIDTH, Tetris.HEIGHT);
 
-		g.setFont(TitleFont1);
+		g.setFont(titleFont1);
 		g.setColor(Color.YELLOW);
 		g.drawString("Tetris", 187, 200);
 
-		g.setFont(TitleFont2);
+		g.setFont(titleFont2);
 		g.setColor(Color.YELLOW);
 		g.drawString("Press ENTER to start", 140, 300);
 
@@ -63,12 +63,22 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Tetris.WIDTH, Tetris.HEIGHT);
 
+		grid.drawGridState(g);
+
 	}
 
 	void drawEndState(Graphics g) {
 
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Tetris.WIDTH, Tetris.HEIGHT);
+
+		g.setFont(titleFont1);
+		g.setColor(Color.YELLOW);
+		g.drawString("Game Over", 135, 200);
+
+		g.setFont(titleFont2);
+		g.setColor(Color.YELLOW);
+		g.drawString("Press ENTER to continue", 125, 300);
 
 	}
 
