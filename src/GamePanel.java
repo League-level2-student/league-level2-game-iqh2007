@@ -9,7 +9,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class GamePanel extends JPanel implements ActionListener, KeyListener {
+public class GamePanel extends  JPanel implements ActionListener, KeyListener {
 
 	Timer frameDraw;
 
@@ -26,7 +26,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	public GamePanel() {
 
-		frameDraw = new Timer(1000 / 60, this);
+		frameDraw = new Timer(1000 / 1, this);
 		frameDraw.restart();
 
 	}
@@ -91,6 +91,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 		else if (currentState == GAME) {
 			drawGameState(g);
+			
 		}
 
 		else if (currentState == END) {
@@ -131,6 +132,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 		System.out.println("action");
 		repaint();
+		grid.updateGridState();
+		
 	}
 
 }

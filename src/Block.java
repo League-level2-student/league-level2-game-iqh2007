@@ -26,9 +26,11 @@ public class Block {
 
 			if(this.falling) {
 				row++;
+				
 			}
 		
 	}
+	
 
 	public void paintComponent(Graphics g) {
 
