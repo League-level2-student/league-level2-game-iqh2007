@@ -22,7 +22,7 @@ public class GamePanel extends  JPanel implements ActionListener, KeyListener {
 	Font titleFont1 = new Font("Times New Roman", Font.PLAIN, 48);
 	Font titleFont2 = new Font("Times New Roman", Font.PLAIN, 25);
 
-	Grid grid = new Grid();
+	Grid2 grid = new Grid2();
 
 	public GamePanel() {
 
@@ -63,7 +63,7 @@ public class GamePanel extends  JPanel implements ActionListener, KeyListener {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Tetris.WIDTH, Tetris.HEIGHT);
 
-		grid.drawGridState(g);
+		grid.draw(g);
 
 	}
 
@@ -132,7 +132,7 @@ public class GamePanel extends  JPanel implements ActionListener, KeyListener {
 
 		System.out.println("action");
 		repaint();
-		grid.updateGridState();
+		//grid.updateGridState();
 		
 	}
 

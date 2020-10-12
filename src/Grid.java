@@ -1,4 +1,4 @@
-import java.awt.Color;
+/*import java.awt.Color;
 import java.awt.Graphics;
 
 public class Grid {
@@ -7,7 +7,7 @@ public class Grid {
 
 	void drawGridState(Graphics g) {
 
-		/*
+		
 		 * Block block2 = new Block(7, 15, Color.BLUE); Block block3 = new Block(15, 2,
 		 * Color.GREEN); Block block4 = new Block(22, 9, Color.RED); Block block5 = new
 		 * Block(5, 0, Color.GREEN);
@@ -15,7 +15,7 @@ public class Grid {
 		 * gamestate[7][15] = block2; gamestate[15][2] = block3; gamestate[22][9] =
 		 * block4; gamestate[5][0] = block5;
 		 * 
-		 */
+		 
 
 		Block block6 = new Block(7, 0, Color.GREEN);
 		Block block7 = new Block(8, 0, Color.BLUE);
@@ -80,3 +80,4 @@ public class Grid {
 	}
 
 }
+*/
