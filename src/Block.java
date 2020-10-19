@@ -13,9 +13,9 @@ public class Block {
 	
 	boolean falling = true;
 
-	Block() {
-		this.x = 50;
-		this.y = 50;
+	Block(int x, int y) {
+		this.x = x;
+		this.y = y;
 		Random random = new Random();
 		int randomcolor = random.nextInt(5);
 		
