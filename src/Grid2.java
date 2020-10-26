@@ -11,12 +11,19 @@ public class Grid2 {
 	  int blocky = 120;
 
 	Block block1 = new Block(40, 120);
-	Block block2 = new Block(80, 40);
-	Block block3 = new Block(80, 160);
-	Block block4 = new Block(200, 80);
+	Block block2 = new Block(40, 40);
+	Block block3 = new Block(40, 160);
+	Block block4 = new Block(40, 80);
+	
+	Block block6 = new Block(240, 120);
+	Block block7 = new Block(120, 120);
+	Block block8 = new Block(160, 120);
+	Block block9 = new Block(200, 120);
+	
 	Block block5 = new Block(blockx, blocky);
 
     ArrayList<Block> array = new ArrayList<Block>();
+    ArrayList<Block> array2 = new ArrayList<Block>();
     
   
 
@@ -56,8 +63,17 @@ public class Grid2 {
 		array.add(block3);
 		array.add(block4);
 		
+		array2.add(block6);
+		array2.add(block7);
+		array2.add(block8);
+		array2.add(block9);
+		
 		for(int i = 0; i < array.size(); i++) {
 			array.get(i).drawBlocks(g);
+		}
+		
+		for(int i = 0; i < array2.size(); i++) {
+			array2.get(i).drawBlocks(g);
 		}
 		
 
