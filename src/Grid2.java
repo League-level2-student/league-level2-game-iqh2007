@@ -20,6 +20,11 @@ public class Grid2 {
 	Block block8 = new Block(160, 120);
 	Block block9 = new Block(200, 120);
 	
+	int blocka =  120;
+	int blockb =  40;
+	int blockc =  160;
+	int blockd =  80;
+	
 	Block block5 = new Block(blockx, blocky);
 
     ArrayList<Block> array = new ArrayList<Block>();
@@ -31,7 +36,7 @@ public class Grid2 {
 		g.setColor(Color.WHITE);
 
 		for (int i = 0; i < 20; i++) {
-			g.fillRect(0, yoffset, 500, 1);
+			g.fillRect(0, yoffset, 500, 1); 
 			yoffset += 40;
 
 		}
@@ -49,13 +54,30 @@ public class Grid2 {
 		block3.drawBlocks(g);
 		block4.drawBlocks(g);
 		
-		/*for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < 5; i++) {
 			//fill this loop with code to draw multiple blocks in formation
+			blocka+=10;
+			blockb+=10;
+			
+			new Block(blocka, blockb).drawBlocks(g);
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			//fill this loop with code to draw multiple blocks in formation
+			
+			blockc+=10;
+			blockd+=10;
+			new Block(blockc, blockd).drawBlocks(g);
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			//for testing blocks falling in formation
+			
 			blockx+=10;
 			blocky+=10;
 			new Block(blockx, blocky).drawBlocks(g);
 		}
-		*/
+		
 	
 		
 		array.add(block1);
