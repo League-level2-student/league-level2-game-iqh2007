@@ -7,18 +7,20 @@ public class Grid2 {
 	private int yoffset = 0;
 	private int xoffset = 0;
 
-	int blockx = 120;
-	int blocky = 120;
+	int blockx1 = 240;
+	int blocky1 = 0;
 
-	int blockx1 = 140;
-	int blocky1 = 140;
+	int blockx2 = 80;
+	int blocky2 = 120;
 
-	int blocka = 120;
-	int blockb = 40;
-	int blockc = 160;
-	int blockd = 80;
+	int blockx3 = 40;
+	int blocky3 = 0;
 
-	Block block5 = new Block(blockx, blocky);
+	int blockx4 = 160;
+	int blocky4 = 200;
+
+	int blockx5 = 320;
+	int blocky5 = 160;
 
 	ArrayList<Block> array = new ArrayList<Block>();
 	ArrayList<Block> array2 = new ArrayList<Block>();
@@ -41,46 +43,62 @@ public class Grid2 {
 
 		xoffset = 0;
 
-		/*for (int i = 0; i < 5; i++) {
-			// fill this loop with code to draw multiple blocks in formation
-			// blocka+=10;
-			blockb += 10;
+		shape5(g);
 
-			new Block(blocka, blockb).drawBlocks(g);
-		}
-		*/
+		shape4(g);
 
-		for (int i = 0; i < 5; i++) {
-			// fill this loop with code to draw multiple blocks in formation
+		shape3(g);
 
-			// blockc+=10;
-			blockd += 10;
-			new Block(blockc, blockd).drawBlocks(g);
-		}
+		shape2(g);
 
-		for (int i = 0; i < 5; i++) {
-			// for testing blocks falling in formation
+		shape1(g);
 
-			// blockx+=10;
-			blocky += 5;
-			new Block(blocky, blockx).drawBlocks(g);
-		}
+	}
 
-		for (int i = 0; i < 0; i++) {
-			// one block to fall
+	void shape3(Graphics g) {
 
-			blocky += 5;
-			new Block(blocky1, blockx1).drawBlocks(g);
-		}
+		new Block(blockx1, blocky1).drawBlocks(g);
+		new Block(blockx1 + 40, blocky1).drawBlocks(g);
+		new Block(blockx1 + 80, blocky1).drawBlocks(g);
+		new Block(blockx1 + 80, blocky1 + 40).drawBlocks(g);
+		blocky1 += 40;
 
-		for (int i = 0; i < array.size(); i++) {
-			array.get(i).drawBlocks(g);
-		}
+	}
 
-		for (int i = 0; i < array2.size(); i++) {
-			array2.get(i).drawBlocks(g);
-		}
+	void shape4(Graphics g) {
 
+		new Block(blockx2, blocky2).drawBlocks(g);
+		new Block(blockx2 + 40, blocky2).drawBlocks(g);
+		new Block(blockx2 + 80, blocky2).drawBlocks(g);
+		new Block(blockx2 + 80, blocky2 - 40).drawBlocks(g);
+		blocky2 += 40;
+
+	}
+
+	void shape5(Graphics g) {
+		new Block(blockx5, blocky5).drawBlocks(g);
+		new Block(blockx5 + 40, blocky5).drawBlocks(g);
+		new Block(blockx5, blocky5 + 40).drawBlocks(g);
+		new Block(blockx5 + 40, blocky5 + 40).drawBlocks(g);
+
+		blocky5 += 40;
+
+	}
+
+	void shape1(Graphics g) {
+		new Block(blockx4, blocky4).drawBlocks(g);
+		new Block(blockx4 + 40, blocky4).drawBlocks(g);
+		new Block(blockx4 + 80, blocky4).drawBlocks(g);
+		new Block(blockx4 + 40, blocky4 - 40).drawBlocks(g);
+		blocky4 += 40;
+	}
+
+	void shape2(Graphics g) {
+		new Block(blockx3, blocky3).drawBlocks(g);
+		new Block(blockx3 + 40, blocky3).drawBlocks(g);
+		new Block(blockx3 + 80, blocky3).drawBlocks(g);
+		new Block(blockx3 + 120, blocky3).drawBlocks(g);
+		blocky3 += 40;
 	}
 
 }

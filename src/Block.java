@@ -16,7 +16,7 @@ public class Block {
 	Block(int x, int y) {
 		this.x = x;
 		this.y = y;
-		Random random = new Random();
+		/*Random random = new Random();
 		int randomcolor = random.nextInt(5);
 		
 		if(randomcolor == 0) {
@@ -38,6 +38,8 @@ public class Block {
 		if(randomcolor == 4) {
 			this.color = Color.ORANGE;
 		}
+		
+		*/
 	}
 	
 	
