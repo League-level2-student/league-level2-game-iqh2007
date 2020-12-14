@@ -1,83 +1,146 @@
-/*import java.awt.Color;
+import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 public class Grid {
 
-	Block[][] gamestate = new Block[25][40];
+	private int yoffset = 0;
+	private int xoffset = 0;
 
-	void drawGridState(Graphics g) {
+	int blockx1 = 240;
+	int blocky1 = 0;
 
-		
-		 * Block block2 = new Block(7, 15, Color.BLUE); Block block3 = new Block(15, 2,
-		 * Color.GREEN); Block block4 = new Block(22, 9, Color.RED); Block block5 = new
-		 * Block(5, 0, Color.GREEN);
-		 * 
-		 * gamestate[7][15] = block2; gamestate[15][2] = block3; gamestate[22][9] =
-		 * block4; gamestate[5][0] = block5;
-		 * 
-		 
+	int blockx2 = 80;
+	int blocky2 = 120;
 
-		Block block6 = new Block(7, 0, Color.GREEN);
-		Block block7 = new Block(8, 0, Color.BLUE);
-		Block block8 = new Block(7, 1, Color.RED);
-		Block block9 = new Block(8, 1, Color.YELLOW);
+	int blockx3 = 40;
+	int blocky3 = 0;
 
-		gamestate[7][0] = block6;
-		gamestate[8][0] = block7;
-		gamestate[7][1] = block8;
-		gamestate[8][1] = block9;
+	int blockx4 = 160;
+	int blocky4 = 200;
 
-		for (int i = 0; i < gamestate.length; i++) {
-			for (int j = 0; j < gamestate[i].length; j++) {
+	int blockx5 = 320;
+	int blocky5 = 160;
 
-				if ( j % 10 == 0) {
-					if(i % 10 ==0) {
+	int blockx6 = 80;
+	int blocky6 = 360;
 
-					gamestate[i][j] = new Block(i, j, Color.BLACK);
-					}
-				}
-				
-				else{
-					gamestate[i][j] = new Block(i, j, Color.BLUE);
-				}
-				Block block = gamestate[i][j];
+	int blockx7 = 360;
+	int blocky7 = 360;
 
-				if (block != null) {
+	ArrayList<Block> array = new ArrayList<Block>();
+	ArrayList<Block> array2 = new ArrayList<Block>();
 
-					g.setColor(block.color);
+	public void draw(Graphics g) {
+		g.setColor(Color.WHITE);
 
-					g.fillRect(block.row * block.width, block.col * block.height, block.width, block.height);
+		for (int i = 0; i < 20; i++) {
+			g.fillRect(0, yoffset, 500, 1);
+			yoffset += 40;
 
-				}
-
-				g.setColor(Color.WHITE);
-
-				g.drawRect(i * 20, j * 20, 20, 20);
-
-			}
 		}
+
+		yoffset = 0;
+
+		for (int i = 0; i < 25; i++) {
+			g.fillRect(xoffset, 0, 1, 800);
+			xoffset += 40;
+		}
+
+		xoffset = 0;
+
+		//shape7(g);
+		// Z BLOCK
+
+		//shape6(g);
+		// S BLOCK
+
+		//shape5(g);
+		//Square BLOCK
+
+		//shape4(g);
+		// L BLOCK
+
+		//shape3(g);
+		// J BLOCK
+
+		//shape2(g);
+		// I BLOCK
+
+		//shape1(g);
+		// T BLOCK
 
 	}
 
-	void updateGridState() {
+	void shape3(Graphics g) {
 
-		for (int i = 0; i < gamestate.length; i++) {
-			for (int j = gamestate[i].length - 1; j > 0; j--) {
-
-				gamestate[i][j] = gamestate[i][j - 1];
-
-				if (gamestate[i][j] != null) {
-					gamestate[i][j].col++;
-				}
-
-			}
-		}
+		new Block(blockx1, blocky1).drawBlocks(g);
+		new Block(blockx1 + 40, blocky1).drawBlocks(g);
+		new Block(blockx1 + 80, blocky1).drawBlocks(g);
+		new Block(blockx1 + 80, blocky1 + 40).drawBlocks(g);
+		blocky1 += 40;
+		//finished
 
 	}
 
-	void addBlock() {
+	void shape4(Graphics g) {
 
+		new Block(blockx2, blocky2).drawBlocks(g);
+		new Block(blockx2 + 40, blocky2).drawBlocks(g);
+		new Block(blockx2 + 80, blocky2).drawBlocks(g);
+		new Block(blockx2 + 80, blocky2 - 40).drawBlocks(g);
+		blocky2 += 40;
+
+	}
+
+	void shape5(Graphics g) {
+		new Block(blockx5, blocky5).drawBlocks(g);
+		new Block(blockx5 + 40, blocky5).drawBlocks(g);
+		new Block(blockx5, blocky5 + 40).drawBlocks(g);
+		new Block(blockx5 + 40, blocky5 + 40).drawBlocks(g);
+
+		blocky5 += 40;
+		//finished
+
+	}
+
+	void shape6(Graphics g) {
+		new Block(blockx6, blocky6).drawBlocks(g);
+		new Block(blockx6 + 40, blocky6).drawBlocks(g);
+		new Block(blockx6, blocky6 + 40).drawBlocks(g);
+		new Block(blockx6 - 40, blocky6 + 40).drawBlocks(g);
+
+		blocky6 += 40;
+		//finished
+
+	}
+
+	void shape7(Graphics g) {
+		new Block(blockx7, blocky7).drawBlocks(g);
+		new Block(blockx7 - 40, blocky7).drawBlocks(g);
+		new Block(blockx7, blocky7 + 40).drawBlocks(g);
+		new Block(blockx7 + 40, blocky7 + 40).drawBlocks(g);
+
+		blocky7 += 40;
+		//finished
+
+	}
+
+	void shape1(Graphics g) {
+		new Block(blockx4, blocky4).drawBlocks(g);
+		new Block(blockx4 + 40, blocky4).drawBlocks(g);
+		new Block(blockx4 + 80, blocky4).drawBlocks(g);
+		new Block(blockx4 + 40, blocky4 - 40).drawBlocks(g);
+		blocky4 += 40;
+		//finished
+	}
+
+	void shape2(Graphics g) {
+		new Block(blockx3, blocky3).drawBlocks(g);
+		new Block(blockx3 + 40, blocky3).drawBlocks(g);
+		new Block(blockx3 + 80, blocky3).drawBlocks(g);
+		new Block(blockx3 + 120, blocky3).drawBlocks(g);
+		blocky3 += 40;
 	}
 
 }
-*/

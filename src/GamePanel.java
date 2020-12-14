@@ -9,7 +9,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class GamePanel extends  JPanel implements ActionListener, KeyListener {
+public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	Timer frameDraw;
 
@@ -22,8 +22,16 @@ public class GamePanel extends  JPanel implements ActionListener, KeyListener {
 	Font titleFont1 = new Font("Times New Roman", Font.PLAIN, 48);
 	Font titleFont2 = new Font("Times New Roman", Font.PLAIN, 25);
 
-	Grid2 grid = new Grid2();
-
+	Grid grid = new Grid();
+	
+	OBLOCK squareblock = new OBLOCK(80,120);
+	TBLOCK tblock = new TBLOCK(160, 0);
+	JBLOCK jblock = new JBLOCK(120, 360);
+	ZBLOCK zblock = new ZBLOCK(240, 80);
+	SBLOCK sblock = new SBLOCK(360, 160);
+	IBLOCK iblock = new IBLOCK(280, 360);
+	LBLOCK lblock = new LBLOCK(160, 240);
+	
 	public GamePanel() {
 
 		frameDraw = new Timer(1000 / 1, this);
@@ -64,6 +72,14 @@ public class GamePanel extends  JPanel implements ActionListener, KeyListener {
 		g.fillRect(0, 0, Tetris.WIDTH, Tetris.HEIGHT);
 
 		grid.draw(g);
+		
+		squareblock.drawBlocks(g);
+		tblock.drawBlocks(g);
+		jblock.drawBlocks(g);
+		zblock.drawBlocks(g);
+		sblock.drawBlocks(g);
+		iblock.drawBlocks(g);
+		lblock.drawBlocks(g);
 
 	}
 
@@ -91,7 +107,7 @@ public class GamePanel extends  JPanel implements ActionListener, KeyListener {
 
 		else if (currentState == GAME) {
 			drawGameState(g);
-			
+
 		}
 
 		else if (currentState == END) {
@@ -132,8 +148,8 @@ public class GamePanel extends  JPanel implements ActionListener, KeyListener {
 
 		System.out.println("action");
 		repaint();
-		//grid.updateGridState();
-		
+		// grid.updateGridState();
+
 	}
 
 }
