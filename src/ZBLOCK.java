@@ -14,7 +14,10 @@ public class ZBLOCK extends Block {
 		new Block(x, y + 40).drawBlocks(g);
 		new Block(x + 40, y + 40).drawBlocks(g);
 
-		y += 40;
+		if (y < 660) {
+			y += 40;
+
+		}
 	}
 
 }

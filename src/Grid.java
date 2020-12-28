@@ -27,6 +27,7 @@ public class Grid {
 
 	int blockx7 = 360;
 	int blocky7 = 360;
+	
 
 	ArrayList<Block> array = new ArrayList<Block>();
 	ArrayList<Block> array2 = new ArrayList<Block>();

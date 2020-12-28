@@ -9,12 +9,17 @@ public class OBLOCK extends Block {
 
 	void drawBlocks(Graphics g) {
 		
+		//find original block in formation and get it to stop at bottom by using provided if statement. 
+
 		new Block(x, y).drawBlocks(g);
 		new Block(x + 40, y).drawBlocks(g);
 		new Block(x, y + 40).drawBlocks(g);
 		new Block(x + 40, y + 40).drawBlocks(g);
 
-		y += 40;
+		if (y < 660) {
+			y += 40;
+
+		}
 
 	}
 

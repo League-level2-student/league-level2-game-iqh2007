@@ -13,8 +13,10 @@ public class IBLOCK extends Block{
 		new Block(x + 80, y).drawBlocks(g);
 		new Block(x + 120, y).drawBlocks(g);
 		
-		y += 40;
-		
+		if (y < 700) {
+			y += 40;
+
+		}
 	}
 
 }

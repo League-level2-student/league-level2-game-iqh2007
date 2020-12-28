@@ -13,7 +13,10 @@ public class LBLOCK extends Block{
 		new Block(x + 80, y).drawBlocks(g);
 		new Block(x + 80, y - 40).drawBlocks(g);
 		
-		y += 40;
+		if (y < 700) {
+			y += 40;
+
+		}
 
 	}
 
