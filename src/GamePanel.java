@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Random;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -23,15 +24,22 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Font titleFont2 = new Font("Times New Roman", Font.PLAIN, 25);
 
 	Grid grid = new Grid();
-	
-	OBLOCK squareblock = new OBLOCK(80,120);
+
+	OBLOCK squareblock = new OBLOCK(80, 120);
 	TBLOCK tblock = new TBLOCK(160, 0);
 	JBLOCK jblock = new JBLOCK(120, 360);
 	ZBLOCK zblock = new ZBLOCK(240, 80);
 	SBLOCK sblock = new SBLOCK(360, 160);
 	IBLOCK iblock = new IBLOCK(280, 360);
 	LBLOCK lblock = new LBLOCK(160, 240);
-	
+
+	//Random random = new Random();
+	//int i = random.nextInt();
+
+	//if(random == 1){
+		//OBLOCK squareblock = new OBLOCK(80,120);
+	//}
+
 	public GamePanel() {
 
 		frameDraw = new Timer(1000 / 1, this);
@@ -72,7 +80,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.fillRect(0, 0, Tetris.WIDTH, Tetris.HEIGHT);
 
 		grid.draw(g);
-		
+
 		squareblock.drawBlocks(g);
 		tblock.drawBlocks(g);
 		jblock.drawBlocks(g);

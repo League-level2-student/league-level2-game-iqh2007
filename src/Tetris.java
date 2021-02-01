@@ -66,3 +66,12 @@ public class Tetris {
 	}
 
 }
+
+
+// perhaps add key listener and use space to rotate? Rotate formation by finding original 
+//block and adding certain values to x and y? have yet to figure out. Have this
+//process done for each formation, randomize what block falling from the top, change color per 
+//formation, and finish moving blocks using arrow keys. (key listener)
+
+
+
