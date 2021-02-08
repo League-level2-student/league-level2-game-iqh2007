@@ -25,25 +25,53 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	Grid grid = new Grid();
 
-	OBLOCK squareblock = new OBLOCK(80, 120);
+	/*OBLOCK squareblock = new OBLOCK(80, 120);
 	TBLOCK tblock = new TBLOCK(160, 0);
 	JBLOCK jblock = new JBLOCK(120, 360);
 	ZBLOCK zblock = new ZBLOCK(240, 80);
 	SBLOCK sblock = new SBLOCK(360, 160);
 	IBLOCK iblock = new IBLOCK(280, 360);
 	LBLOCK lblock = new LBLOCK(160, 240);
-
-	//Random random = new Random();
-	//int i = random.nextInt();
-
-	//if(random == 1){
-		//OBLOCK squareblock = new OBLOCK(80,120);
-	//}
+	*/
+	
+	Random random = new Random();
+	
+	Block block;
 
 	public GamePanel() {
 
 		frameDraw = new Timer(1000 / 1, this);
 		frameDraw.restart();
+		
+		int i = random.nextInt(7);
+
+		if(i == 0){
+			block = new OBLOCK(160,40);
+		}
+		
+		else if(i == 1){
+			block = new TBLOCK(160,40);
+		}
+		
+		else if(i == 2){
+			block = new JBLOCK(160,40);
+		}
+		
+		else if(i == 3){
+			block = new ZBLOCK(160,40);
+		}
+		
+		else if(i == 4){
+			block = new SBLOCK(160,40);
+		}
+		
+		else if(i == 5){
+			block = new IBLOCK(160,40);
+		}
+		
+		else if(i == 6){
+			block = new LBLOCK(160,40);
+		}
 
 	}
 
@@ -80,15 +108,16 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.fillRect(0, 0, Tetris.WIDTH, Tetris.HEIGHT);
 
 		grid.draw(g);
-
-		squareblock.drawBlocks(g);
+		
+		block.drawBlocks(g);
+		/*squareblock.drawBlocks(g);
 		tblock.drawBlocks(g);
 		jblock.drawBlocks(g);
 		zblock.drawBlocks(g);
 		sblock.drawBlocks(g);
 		iblock.drawBlocks(g);
 		lblock.drawBlocks(g);
-
+		 */
 	}
 
 	void drawEndState(Graphics g) {
