@@ -73,6 +73,20 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			block = new LBLOCK(160,40);
 		}
 
+		/*
+		 - find a way to keep steady flow of blocks randomly
+		 (spawn new one after previous touches the bottom, 
+		 may prove difficult as must find original block in each formation)
+		 - move blocks, side to side
+		 - allow blocks to rotate
+		
+		 - start removing rows once filled
+		 
+		  - make score board
+		  
+		  -final touches
+		 */
+		
 	}
 
 	void updateMenuState() {
